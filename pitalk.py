@@ -4,36 +4,36 @@ from wasend import YowsupSendStack
 from wareceive import YowsupReceiveStack, MessageReceived
  
 def credential():
-    return “447712345678”,“jK0zdPJ9zz0BBC3CwmnLqmxuhBk=”
+    return â€œ201226617950â€,â€œooclw8LSIoTEfcJAQFEngM5yixc=â€
  
 def Answer(risp):
     try:
-       stack=YowsupSendStack(credential(), [([“447668139981”, risp])])
+       stack=YowsupSendStack(credential(), [([â€œ201226617950â€, risp])])
        stack.start()
     except: pass
     return
  
 def Refresh():
-    Answer(“Refreshing the repos.”)
-    os.system(“sudo apt-get -y update”)
-    Answer(“Repos updated.”)
+    Answer(â€œRefreshing the repos.â€)
+    os.system(â€œsudo apt-get -y updateâ€)
+    Answer(â€œRepos updated.â€)
     return
  
 def Restart():
-    Answer(“Rebooting”)
-    os.system(“sudo reboot”)
+    Answer(â€œRebootingâ€)
+    os.system(â€œsudo rebootâ€)
     return
  
 def Temp():
-    t=float(subprocess.check_output([“/opt/vc/bin/vcgencmd measure_temp | cut -c6-9”], shell=True)[:-1])
+    t=float(subprocess.check_output([â€œ/opt/vc/bin/vcgencmd measure_temp | cut -c6-9â€], shell=True)[:-1])
     ts=str(t)
-    Answer(“My temperature is “+ts+” C”)
+    Answer(â€œMy temperature is â€œ+ts+â€ Câ€)
     return
  
 def Disk():
-   result=subprocess.check_output(“df -h .”, shell=True)
+   result=subprocess.check_output(â€œdf -h .â€, shell=True)
        output=result.split()
-     Answer(“Disk space:\nTotal: “+output[8]+”\nUsed: “+output[9]+” (“+output[11]+”)\nFree: “+output[10])
+     Answer(â€œDisk space:\nTotal: â€œ+output[8]+â€\nUsed: â€œ+output[9]+â€ (â€œ+output[11]+â€)\nFree: â€œ+output[10])
    return
 while True:
     try:
@@ -41,13 +41,13 @@ while True:
            stack.start()
     except MessageReceived as rcvd:
            received=rcvd.value.lower()
-           if received[:len(“447668139981”)]==“447668139981”:
-                   received=received[len(“447668139981”):]
-                   if received[:4]==“hiya”: Answer(“Hi chap!”)
-    elif received[:7]==“restart” or received[:6]==“reboot”: Restart()
-       elif “disk” in received: Disk()
-       elif “hot” in received: Temp()
-elif “refresh” in received: Refresh()
-           else: Answer(“Eh? What was that?”)
+           if received[:len(â€œ201226617950â€)]==â€œ201226617950â€:
+                   received=received[len(â€œ201226617950â€):]
+                   if received[:4]==â€œhiyaâ€: Answer(â€œHi chap!â€)
+    elif received[:7]==â€œrestartâ€ or received[:6]==â€œrebootâ€: Restart()
+       elif â€œdiskâ€ in received: Disk()
+       elif â€œhotâ€ in received: Temp()
+elif â€œrefreshâ€ in received: Refresh()
+           else: Answer(â€œEh? What was that?â€)
        else: #message from wrong sender
-                   with open(“/home/pi/whatsapp.log”,”a”) as mf: mf.write(“Unauthorised access from: “+received[:len(“919968139981”)]+”\n”)
+                   with open(â€œ/home/pi/whatsapp.logâ€,â€aâ€) as mf: mf.write(â€œUnauthorised access from: â€œ+received[:len(â€œ919968139981â€)]+â€\nâ€)
