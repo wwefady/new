@@ -1,7 +1,7 @@
 var config = {};
 
 config.host = "a4hxjcrdpeqvc.iot.us-east-1.amazonaws.com";
-config.topic = "$aws/things/SmartTvControl/shadow/update";
+config.topic = "$aws/things/PiGroundStation01/shadow/update";
 config.app_id = "amzn1.echo-sdk-ams.app.a6702c59-e3f4-4bd1-8f32-14573d9a2d04"
 
 config.privateKey = new Buffer("-----BEGIN RSA PRIVATE KEY-----"+
@@ -30,8 +30,7 @@ config.privateKey = new Buffer("-----BEGIN RSA PRIVATE KEY-----"+
 "m6inW1ECgYEA5KGf71JJV97J1PPolnWA2dHfjjMLllk0V9Ie7qMNSqfKqBikG7on"+
 "FpDpMT5AyAL1YIseWRX9UKpmtUNAVukFwdlHkDJiNNokCpNGX5wy71TxallGx//C"+
 "pDlt5Kkgm5tZgLuNmyOhB4dAqqlzYdeuDYBKz+OfkwhzK54zec+IiTI="+
-"-----END RSA PRIVATE KEY-----"+
-");
+"-----END RSA PRIVATE KEY-----");
 
 config.certificate = new Buffer("-----BEGIN CERTIFICATE-----"+
 "MIIDWTCCAkGgAwIBAgIUE4IMetgkb+2FRpKzJKZcQFhNlIcwDQYJKoZIhvcNAQEL"+
@@ -52,8 +51,7 @@ config.certificate = new Buffer("-----BEGIN CERTIFICATE-----"+
 "G7/8dI3cjeXU0AGpw0+PSOtyxWEI5nUnOeig0pphtDyWZjlaa+i+8T4MPlgNEYU6"+
 "R8xHKf99c+RKqjOXJdcosWCBXtIqD7mVnzomcclH3gf/jHuIuIg0ABzYNLixG3zW"+
 "nKeTduejmUP3Ff1N3scQIdO3Qigmv5CoWujKSWgubdn/S5QFoU0sWdg8vrbz"+
-"-----END CERTIFICATE-----"+
-");
+"-----END CERTIFICATE-----");
 
 
 /**
